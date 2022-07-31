@@ -1,0 +1,56 @@
+application {
+  config {
+    baseName corebe
+    applicationType microservice
+    packageName com.ntap.corebe
+    serviceDiscoveryType eureka
+    authenticationType jwt
+    databaseType sql
+    devDatabaseType postgresql
+    prodDatabaseType postgresql
+    cacheProvider no
+    buildTool maven
+    skipClient true
+    skipUserManagement true
+    messageBroker kafka
+    jhiPrefix ntap
+    serverPort 8081
+  }
+
+  entities *
+}
+
+use serviceClass for *
+filter *
+
+enum AppVersionType {
+  PORTABLE,
+  INSTALLABLE
+}
+
+enum PlatformType{
+  WINDOWS,
+  MACOS,
+  UBUNTU
+}
+
+enum TaskStatus{
+  COMPLETE,
+  INPROGRESS,
+  TODO
+}
+
+entity AppVersion {
+  @Id Id UUID
+  Major Integer
+  Minor Integer
+  Patch Integer
+  ReleaseDate ZonedDateTime
+  Description String
+  Location String
+  Type AppVersionType
+  CreatedBy String
+  CreatedDate Instant
+  LastModifiedBy String
+  LastModifiedDate Instant
+}

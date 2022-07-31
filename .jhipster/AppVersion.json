@@ -1,0 +1,71 @@
+{
+  "name": "AppVersion",
+  "fields": [
+    {
+      "fieldName": "id",
+      "fieldType": "UUID",
+      "options": {
+        "id": true
+      }
+    },
+    {
+      "fieldName": "major",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "minor",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "patch",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "releaseDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "location",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "AppVersionType",
+      "fieldValues": "PORTABLE,INSTALLABLE"
+    },
+    {
+      "fieldName": "createdBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "lastModifiedBy",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "lastModifiedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "app_version",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": true,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["corebe"],
+  "microserviceName": "corebe",
+  "clientRootFolder": "corebe",
+  "databaseType": "sql",
+  "changelogDate": "20220731035544"
+}
